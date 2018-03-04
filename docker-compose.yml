@@ -2,10 +2,10 @@ version: "2"
 
 services:
   engine:
-    image: qlikea/engine:12.139.0
+    image: qlikea/engine:latest
     restart: always
     command: -S AcceptEULA=${ACCEPT_EULA}
     ports:
       - "19076:9076"
-    volumes: 
+    volumes:
       - ./data:/data
