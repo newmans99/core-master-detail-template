@@ -1,0 +1,47 @@
+<div class="header">
+	<div class="left-content">
+		<span class="md-title">Qlik Core</span>
+		<span class="md-subtitle">Master Detail Example Application</span>
+	</div>
+	<div class="right-content">
+		<div class="clear-selections" ng-click="$ctrl.clearAllSelections()" ng-class="{'disabled': !dataSelected}">Clear selections</div>
+		<img class="git-hub-icon" src="src/hello-visualization/resources/github-social-logo.svg" ng-click="openGithub()" title="Open GitHub project">
+	</div>
+</div>
+<div class="content" ng-click="$ctrl.clearAllSelections()">
+	<div class="container" ng-if="$ctrl.connected">
+		<div class="title">Title</div>
+		<div>Subtitle</div>
+		<div id="master-container" class="master-class">
+			Need a table object here!
+		</div>
+	</div>
+</div>
+<div class="footer" ng-class="{'expanded': showFooter}">
+	<div>
+		<span class="lui-icon--top" ng-class="{'expanded': showFooter}" ng-click="toggleFooter()"></span>
+		<span class="footer-title">Footer Title</span>
+	</div>
+	<div class="info-wrapper" ng-show="dataSelected">
+		<img class="data-image">
+		<div class="data-info">
+			<span class="info-title">Title</span>
+			<span class="data-title"></span>
+			<span class="info-title">Year</span>
+			<span class="data-year"></span>
+			<span class="info-title">Genre</span>
+			<span class="data-genre"></span>
+			<span class="info-title">Description</span>
+			<span class="data-description"></span>
+		</div>
+	</div>
+	<div class="no-data-selected" ng-show="!dataSelected">No data is selected</div>
+</div>
+
+<div class="error" ng-if="!$ctrl.connected && !$ctrl.connecting">
+	<div class="error-wrapper">
+		<span class="lui-icon--warning"></span>
+		<span class="error-title">Oops! Something went wrong.</span>
+		<span>{{$ctrl.error ? $ctrl.error : "Unexpected error"}}</span>
+	</div>
+</div>
